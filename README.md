@@ -1,80 +1,55 @@
-Group Chat Application using Java Sockets
+**Java Group Chat Application**
 
-This project is a group chat application implemented using Java socket programming, where multiple clients can connect to a central server and exchange messages in real time. The application follows a client–server architecture and uses multi-threading to handle multiple users simultaneously.
+This project is a group chat application built using core Java.
+Multiple clients can connect to a server and communicate with each other in real time.
 
-The project focuses on understanding how network communication, threads, and shared resources work together in a real-time system.
-
-Project Description
-
-The system consists of three main components:
-
-Server – Listens for incoming client connections and manages communication
-
-ClientHandler – Handles message processing for each connected client
-
-Client – Allows users to connect to the server and send/receive messages through the terminal
-
-Each client connection is handled on a separate thread, ensuring that multiple clients can communicate without blocking each other.
-
-How the Application Works
-
-The server starts and listens on a specific port.
-
-Clients connect to the server using a socket connection.
-
-Each client sends a username upon connection.
-
-Messages sent by one client are broadcast to all connected clients.
-
-When a client disconnects, the server removes it from the active connections list.
-
-Key Concepts Used
-
-TCP socket communication using ServerSocket and Socket
-
-Multi-threading using Thread and Runnable
-
-Client–server architecture
-
-Message broadcasting to multiple clients
-
-Handling client connections and disconnections
-
-Input/output stream handling using BufferedReader and BufferedWriter
-
-Project Structure
-chat-system/
-│
-├── Server.java
-├── ClientHandler.java
-├── Client.java
-└── README.md
-
-How to Run the Project
-
-Compile all Java files:
-
-javac *.java
+The purpose of this project is to understand how socket programming and
+multi-threading work together in a client-server system.
 
 
-Start the server:
+**Project Description**
 
-java Server
+The application has three main parts:
+
+1. Server
+   - Listens for incoming client connections
+   - Accepts multiple clients at the same time
+
+2. ClientHandler
+   - Runs on a separate thread for each client
+   - Receives messages from one client
+   - Sends messages to all connected clients
+
+3. Client
+   - Connects to the server
+   - Allows the user to send and receive messages using the terminal
 
 
-Open multiple terminals and start clients:
+**How the Application Works**
 
-java Client
+- The server starts and waits for clients to connect
+- Each client connects using a socket
+- A new thread is created for every connected client
+- Messages sent by one client are broadcast to all others
+- When a client disconnects, it is removed from the server list
 
 
-Each client can enter a username and start sending messages.
+**How to Run the Project**
 
-Learning Outcomes
+1. Compile all files:
+   javac *.java
 
-Understanding of socket-based communication in Java
+2. Start the server:
+   java Server
 
-Practical experience with multi-threaded programming
+3. Open multiple terminals and start clients:
+   java Client
 
-Managing shared resources across threads
 
-Building a simple real-time messaging system
+**What I Learned**
+
+- Basics of TCP socket communication in Java
+- Handling multiple clients using threads
+- Client-server architecture
+- Managing shared resources between threads
+
